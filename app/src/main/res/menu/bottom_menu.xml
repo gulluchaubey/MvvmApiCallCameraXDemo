@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/first_item"
+        android:title="@string/first_item"
+        android:icon="@drawable/ic_baseline_check_circle_24" />
+    <item
+        android:id="@+id/second_item"
+        android:title="@string/second_item"
+        android:icon="@drawable/ic_baseline_check_circle_24"/>
+    <item
+        android:id="@+id/cameraFragment"
+        android:title="@string/camera"
+        android:icon="@drawable/ic_baseline_camera_alt_24"/>
+    <item
+        android:id="@+id/third_item"
+        android:title="@string/third_item"
+        android:icon="@drawable/ic_baseline_check_circle_24"/>
+    <item
+        android:id="@+id/fourth_item"
+        android:title="@string/fourth_item"
+        android:icon="@drawable/ic_baseline_check_circle_24"/>
+</menu>

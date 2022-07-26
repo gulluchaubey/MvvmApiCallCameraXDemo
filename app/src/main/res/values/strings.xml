@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MvvmApiCallCameraXDemo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="second_item">Second Item</string>
+    <string name="first_item">First Item</string>
+    <string name="camera">Camera</string>
+    <string name="third_item">Third Item</string>
+    <string name="fourth_item">Fourth Item</string>
+</resources>
