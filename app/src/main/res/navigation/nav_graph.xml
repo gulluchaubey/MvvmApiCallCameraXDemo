@@ -3,18 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/cameraFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/cameraFragment"
         android:name="com.example.mvvmapicallcameraxdemo.ui.home.camera.CameraFragment"
         android:label="fragment_camera"
-        tools:layout="@layout/fragment_camera" />
+        tools:layout="@layout/fragment_camera">
+
+        <action
+            android:id="@+id/cameraFragment_to_imageUploadFragment"
+            app:popUpTo="@id/cameraFragment"
+            app:destination="@+id/imageUploadFragment"
+            app:popUpToInclusive="true"/>
+
+
+    </fragment>
     <fragment
         android:id="@+id/imageUploadFragment"
         android:name="com.example.mvvmapicallcameraxdemo.ui.home.imageupload.ImageUploadFragment"
         android:label="fragment_image_upload"
-        tools:layout="@layout/fragment_image_upload" />
+        tools:layout="@layout/fragment_image_upload">
+        <argument
+            android:name="imageUrl"
+            app:argType="string"
+           />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.mvvmapicallcameraxdemo.ui.home.HomeFragment"

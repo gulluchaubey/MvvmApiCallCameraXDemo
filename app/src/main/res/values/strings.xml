@@ -7,4 +7,6 @@
     <string name="camera">Camera</string>
     <string name="third_item">Third Item</string>
     <string name="fourth_item">Fourth Item</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="upload_iamge">Upload Iamge</string>
 </resources>
