@@ -13,7 +13,7 @@ class ImageUploadRepository(private val apiInterface: ApiInterface) {
 
             val response = apiInterface.beta(type,imgUrl)
             if(response.isSuccessful){
-                Results(Status.SUCCESS,response.body(),null)
+                Results(Status.SUCCESS,response.body(),response.message())
             }else{
                Results(Status.ERROR,null,null)
             }

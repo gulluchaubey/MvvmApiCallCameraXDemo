@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:cardCornerRadius="50dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/black">
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/paymentlogo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/your_img" />
+        </com.google.android.material.card.MaterialCardView>
+        <TextView
+            android:id="@+id/tv_list_grp_feeds_caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Good things come to those who sweat."
+            android:textSize="@dimen/_8sdp"
+            android:textColor="@color/intro_gray"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="start"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_list_grp_feeds_profile_icon"/>
+        <!--
+            android:src="@drawable/profile_ellipse"
+        -->
+
+        <TextView
+            android:id="@+id/tv_list_grp_feeds_user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Joseph J."
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:includeFontPadding="false"
+            android:textColor="@color/intro_gray"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_list_grp_feeds_ellipse"
+            app:layout_constraintBottom_toTopOf="@+id/tv_list_grp_feeds_grp_name"
+            app:layout_constraintStart_toEndOf="@+id/iv_list_grp_feeds_profile_icon"
+            app:layout_constraintTop_toTopOf="@+id/iv_list_grp_feeds_profile_icon"/>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

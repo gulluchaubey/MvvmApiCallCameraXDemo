@@ -20,7 +20,7 @@ private var _response = MutableLiveData<com.example.mvvmapicallcameraxdemo.utils
 
     fun uploadImage(type:RequestBody,imgUrl:MultipartBody.Part) = viewModelScope.launch {
         _response.postValue(Results(Status.LOADING,null,null))
-        _response.postValue(Results(imageUploadRepository.getImageUploadResponse(type,imgUrl).status,
+        response.postValue(Results(imageUploadRepository.getImageUploadResponse(type,imgUrl).status,
             imageUploadRepository.getImageUploadResponse(type,imgUrl).data,null))
     }
 }
