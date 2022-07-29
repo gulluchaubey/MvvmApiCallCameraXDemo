@@ -9,4 +9,9 @@
     <string name="fourth_item">Fourth Item</string>
     <string name="take_picture">Take Picture</string>
     <string name="upload_iamge">Upload Iamge</string>
+    <string name="name">Alax</string>
+    <string name="bio">Good things come to those who sweat.</string>
+    <string name="share">Share</string>
+    <string name="comment">Comment</string>
+    <string name="like">Like</string>
 </resources>

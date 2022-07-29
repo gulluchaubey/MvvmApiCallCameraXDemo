@@ -56,9 +56,6 @@ class ImageUploadFragment : Fragment() {
         }
 
 
-        //pass it like this
-
-        //lifecycleScope.launch {  }
         val file =  File(getRealPathFromUri(requireContext(),imgUrl.toUri()))
         //val requestFile = RequestBody.create(MediaType.parse("image/jpg"), file)
         val requestFile = RequestBody.create(MediaType.parse("text/plain"), file)
@@ -72,17 +69,20 @@ class ImageUploadFragment : Fragment() {
         viewModel.response.observe(viewLifecycleOwner){
             when(it.status){
                 Status.SUCCESS->{
-                    binding.progressBar.progress = 100
+                    binding.progressBar.visibility=View.GONE
                     Toast.makeText(activity, it.data?.message ?: "SUCCESS",Toast.LENGTH_SHORT).show()
+                    binding.btnUploadImg.isEnabled = true
                     Navigation.findNavController(view).popBackStack(R.id.homeFragment,false)
                 }
                 Status.LOADING->{
-                    binding.progressBar.progress = 50
+                    binding.progressBar.visibility=View.VISIBLE
                     Toast.makeText(activity,"Status.LOADING",Toast.LENGTH_SHORT).show()
+                    binding.btnUploadImg.isEnabled = false
                 }
                 Status.ERROR->{
-                    binding.progressBar.progress = 0
+                    binding.progressBar.visibility=View.GONE
                     Toast.makeText(activity, it.data?.message ?: "ERROR",Toast.LENGTH_SHORT).show()
+                    binding.btnUploadImg.isEnabled = true
                     Navigation.findNavController(view).popBackStack(R.id.homeFragment,false)
                 }
             }

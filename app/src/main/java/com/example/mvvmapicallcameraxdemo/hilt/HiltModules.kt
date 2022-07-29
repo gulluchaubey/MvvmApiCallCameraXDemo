@@ -7,8 +7,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -18,7 +20,12 @@ object HiltModules {
     fun provideRetrofitInterface():ApiInterface{
         return Retrofit.Builder().baseUrl(Constants.BASE_URL).addConverterFactory(
             GsonConverterFactory.create()
-        ).build().create(ApiInterface::class.java)
+        ).client(OkHttpClient.Builder()
+            .connectTimeout(1, TimeUnit.MINUTES)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(15, TimeUnit.SECONDS)
+            .build()).
+        build().create(ApiInterface::class.java)
     }
 
     @Provides

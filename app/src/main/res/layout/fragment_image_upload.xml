@@ -6,22 +6,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.imageupload.ImageUploadFragment">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:max="100"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+
     <ImageView
         android:id="@+id/ivCapturedImg"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
         android:layout_margin="@dimen/_20sdp"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btnUploadImg"/>
@@ -37,5 +28,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

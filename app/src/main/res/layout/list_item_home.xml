@@ -13,59 +13,99 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            app:cardCornerRadius="50dp"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/black">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvProfile"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                app:cardCornerRadius="50dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/paymentlogo"
+                    android:scaleType="fitCenter"
+                    />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cvProfile"/>
+
+            <TextView
+                android:id="@+id/tvBio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/bio"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:includeFontPadding="false"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                app:layout_constraintStart_toEndOf="@+id/cvProfile"/>
             <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/paymentlogo"
-                android:scaleType="fitCenter"
-                android:src="@drawable/your_img" />
-        </com.google.android.material.card.MaterialCardView>
-        <TextView
-            android:id="@+id/tv_list_grp_feeds_caption"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Good things come to those who sweat."
-            android:textSize="@dimen/_8sdp"
-            android:textColor="@color/intro_gray"
-            android:fontFamily="@font/poppins_semibold"
-            android:gravity="start"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_list_grp_feeds_profile_icon"/>
-        <!--
-            android:src="@drawable/profile_ellipse"
-        -->
+                android:id="@+id/ivPost"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_250sdp"
+                android:src="@drawable/image"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvProfile"/>
 
-        <TextView
-            android:id="@+id/tv_list_grp_feeds_user_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Joseph J."
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:includeFontPadding="false"
-            android:textColor="@color/intro_gray"
-            android:fontFamily="@font/poppins_semibold"
-            android:textSize="@dimen/_10sdp"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            app:layout_constraintEnd_toStartOf="@+id/iv_list_grp_feeds_ellipse"
-            app:layout_constraintBottom_toTopOf="@+id/tv_list_grp_feeds_grp_name"
-            app:layout_constraintStart_toEndOf="@+id/iv_list_grp_feeds_profile_icon"
-            app:layout_constraintTop_toTopOf="@+id/iv_list_grp_feeds_profile_icon"/>
+            <TextView
+                android:id="@+id/tvLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/like"
+                android:drawablePadding="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPost"
+                app:drawableTopCompat="@drawable/ic_baseline_auto_awesome_24" />
+            <TextView
+                android:id="@+id/tvComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/comment"
+                android:drawablePadding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+               app:layout_constraintStart_toEndOf="@+id/tvLike"
+                app:layout_constraintEnd_toStartOf="@+id/tvShare"
+                app:layout_constraintTop_toBottomOf="@+id/ivPost"
+                app:drawableTopCompat="@drawable/ic_baseline_auto_awesome_24" />
+            <TextView
+                android:id="@+id/tvShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/share"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPost"
+                app:drawableTopCompat="@drawable/ic_baseline_auto_awesome_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </com.google.android.material.card.MaterialCardView>
